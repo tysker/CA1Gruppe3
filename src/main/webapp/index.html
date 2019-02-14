@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            h1 {text-align: center;}
+            h3 {text-align: center;}
+
+            .center {
+                display: inline-block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hyperlinks {
+                text-align: center;
+                font-size: 25px;
+                font-weight: bold;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            .column {
+                float: left;
+                width: 15%;
+                padding: 5px;
+            }
+
+            /* Clearfix (clear floats) */
+            .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+        </style>
+    </head>
+    <body bgcolor="#15c68b">
+
+
+        <h1>Course Assignment 1</h1>
+        <h3>Gruppe 3</h3>
+        <h3>Jörg, Rasmus, Morten, Nikolai </h3>
+
+        
+        <div class="row">
+            <div class="column">
+                <img src="joerg.jpg" alt="Snow" width="200" height="200">
+            </div>
+            <div class="column">
+                <img src="rasmus.jpg" alt="Forest" width="200" height="200">
+            </div>
+            <div class="column">
+                <img src="morten.jpg" alt="Mountains" width="200" height="200">
+            </div>
+             <div class="column">
+                <img src="nikolai.jpg" alt="nikolai" width="200" height="200">
+            </div>
+        </div>
+
+        <a href="" target="_blank"><p class="hyperlinks">Calculator</p></a>
+        <a href="" target="_blank"><p class="hyperlinks">Calculator API</p></a>
+        <a href="" target="_blank"><p class="hyperlinks">Dynamic UI Manipulation</p></a>
+        <a href="" target="_blank"><p class="hyperlinks">Dynamic UI Manipulation With Data Obtained Via Fetch</p></a>
+    </body>
+</html>
