@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Data fetch</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 4px;
+            }
+
+            tr:nth-child(odd) {
+                background-color: #dddddd;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Type 1-10 to retreive a specific user!</h2>
+        <input type="number" id="number">
+        <button onClick="getUser()">Get user</button>
+        <button onClick="getAllUsers()">Get all users</button>
+        <br/>
+        <div id="content"></div>
+        <script src = "JavaScript/fetch.js"></script>
+    </body>
+</html>
