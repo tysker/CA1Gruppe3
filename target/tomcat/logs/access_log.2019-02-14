@@ -1,0 +1,5 @@
+127.0.0.1 - - [14/Feb/2019:18:56:49 +0100] "GET /CA1/calculator?operation=sub&n1=3&n2=3 HTTP/1.1" 200 19 http-bio-7777-exec-1 47
+127.0.0.1 - - [14/Feb/2019:18:56:49 +0100] "GET /CA1/calculator?operation=div&n1=3&n2=0 HTTP/1.1" 400 32 http-bio-7777-exec-2 16
+127.0.0.1 - - [14/Feb/2019:18:56:49 +0100] "GET /CA1/calculator?operation=add&n1=3&n2=3 HTTP/1.1" 200 19 http-bio-7777-exec-3 0
+127.0.0.1 - - [14/Feb/2019:18:56:49 +0100] "GET /CA1/calculator?operation=mul&n1=3&n2=3 HTTP/1.1" 200 19 http-bio-7777-exec-4 0
+127.0.0.1 - - [14/Feb/2019:18:56:49 +0100] "GET /CA1/calculator?operation=div&n1=3&n2=3 HTTP/1.1" 200 19 http-bio-7777-exec-5 0

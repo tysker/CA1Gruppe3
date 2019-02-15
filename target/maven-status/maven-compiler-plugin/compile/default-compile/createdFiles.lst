@@ -1,1 +1,8 @@
+<<<<<<< HEAD
+calculator\simplecalculator\ICalculator.class
+calculator\simplecalculator\Calculator.class
+utils\HttpClient.class
+webcalculator\CalculatorServlet.class
+=======
 calculator\Calculator.class
+>>>>>>> 1d3acdeadfa5bef8d4d994a2d457b3ce340a0b25
