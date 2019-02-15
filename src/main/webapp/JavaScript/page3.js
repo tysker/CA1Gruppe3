@@ -15,8 +15,7 @@ var listController = (function () {
 
     function convertToHTML(string) {
         return "<li>" + string + "</li>";
-    }
-
+    };
 
     return {
         generateList: function (stringArray) {
@@ -68,6 +67,8 @@ var UIController = (function () {
     var DOMLists = {
         boys: ["Peter", "Lars", "ole"],
         girls: ["Janne", "hanne", "Sanne"],
+        boysNew: ["Peter", "Lars", "ole"],
+        girlsNew: ["Janne", "hanne", "Sanne"],
         toggle: toggleAllSort = true
 
     };
@@ -81,6 +82,7 @@ var UIController = (function () {
             return DOMLists;
         }
     }
+
 })();
 
 
@@ -92,27 +94,33 @@ var controller = (function (listCtrl, UICtrl) {
     var allList = document.getElementById(DOM.allList);
 
 
+    document.getElementById('reset').addEventListener('click', function () {
+        controller.init();
+    });
+
+
     // Add a boy to the list
     document.getElementById(DOM.addboy).addEventListener('click', function () {
         var newBoy = document.getElementById(DOM.newboy).value;
         if (newBoy.length > 0) {
-            DOMList.boys.push(newBoy);
+            DOMList.boysNew.push(newBoy);
             // clear input field
             document.getElementById(DOM.newboy).value = '';
             //update List
-            controller.init();
+            updateList();
         }
+
     });
 
     // Add a girl to the list
     document.getElementById(DOM.addgirl).addEventListener('click', function () {
         var newGirl = document.getElementById(DOM.newgirl).value;
         if (newGirl.length > 0) {
-            DOMList.girls.push(newGirl);
+            DOMList.girlsNew.push(newGirl);
             // clear input field
             document.getElementById(DOM.newgirl).value = '';
             //update List
-            controller.init();
+            updateList();
         }
     });
 
@@ -122,11 +130,11 @@ var controller = (function (listCtrl, UICtrl) {
         let last = document.getElementById(DOM.lastRadioBtn).checked;
         // check which radio button is clicked, otherwise the top of the list is removed
         if (first === false) {
-            DOMList.boys.pop();
+            DOMList.boysNew.pop();
         } else if (last === false) {
-            DOMList.boys.shift();
+            DOMList.boysNew.shift();
         }
-        controller.init();
+        updateList();
     });
 
     // Remove a girl from the top of the List
@@ -135,11 +143,11 @@ var controller = (function (listCtrl, UICtrl) {
         let last = document.getElementById(DOM.lastRadioBtn).checked;
         // check which radio button is clicked, otherwise the top of the list is removed
         if (first === false) {
-            DOMList.girls.pop();
+            DOMList.girlsNew.pop();
         } else if (last === false) {
-            DOMList.girls.shift();
+            DOMList.girlsNew.shift();
         }
-        controller.init();
+        updateList();
     });
 
     // Reverse all names in the "ALL" coumn
@@ -151,7 +159,7 @@ var controller = (function (listCtrl, UICtrl) {
 
     // function sortALL
     document.getElementById(DOM.sortList).addEventListener('click', function () {
-        var concatList = DOMList.boys.concat(DOMList.girls);
+        var concatList = DOMList.boysNew.concat(DOMList.girlsNew);
         listCtrl.descending(concatList);
         if (!DOMList.toggleAllSort) {
             concatList = concatList.reverse();
@@ -160,7 +168,20 @@ var controller = (function (listCtrl, UICtrl) {
         DOMList.toggleAllSort = !DOMList.toggleAllSort;
     });
 
+
+    function updateList() {
+        // show all the boys
+        document.getElementById(DOM.boysList).innerHTML = listCtrl.generateList(DOMList.boysNew);
+        // show all the girls
+        document.getElementById(DOM.girlsList).innerHTML = listCtrl.generateList(DOMList.girlsNew);
+        // show all
+        document.getElementById(DOM.allList).innerHTML = listCtrl.generateList(DOMList.boysNew.concat(DOMList.girlsNew));
+
+    }
+
+
     return {
+
         init: function () {
             // show all the boys
             document.getElementById(DOM.boysList).innerHTML = listCtrl.generateList(DOMList.boys);
@@ -174,9 +195,7 @@ var controller = (function (listCtrl, UICtrl) {
 })(listController, UIController);
 
 
-// initialize Program
 controller.init();
-
 
 
 
