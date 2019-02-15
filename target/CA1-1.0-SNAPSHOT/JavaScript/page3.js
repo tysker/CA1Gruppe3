@@ -4,6 +4,12 @@
  * and open the template in the editor.
  */
 
+/**
+ * Immediatly Invoked Funktion Expression = IIFE
+ * WHY USING AN IIFE ?
+ * In JavaScript, variables are scoped to their containing function. This means that they can’t be accessed outside of the function.
+ * 
+ * */
 var listController = (function () {
 
 
