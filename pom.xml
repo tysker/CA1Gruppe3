@@ -54,11 +54,11 @@
                         <artifactId>tomcat7-maven-plugin</artifactId>  
                         <version>2.2</version>  
                         <configuration>
-                            <url>https://mortenfeldtstudent.dk/manager/text</url>  
+                            <url>https://techjahn.dk/manager/text</url>  
                             <server>TomcatServer</server>  
                             <path>/CA1</path>  
                             <username>admin</username>  
-                            <password>Morten123</password>
+                            <password>nikolai</password>
                             <update>true</update>  
                         </configuration>
                     </plugin> 
