@@ -37,21 +37,26 @@ function showArrays() {
 // Add a boy to the list
 document.getElementById('addboy').addEventListener('click', function () {
     var newBoy = document.getElementById('newboy').value;
-    boys.push(newBoy);
-    // clear input field
-    document.getElementById('newboy').value = '';
-    //update List
-    showArrays();
+    if (newBoy.length > 0) {
+        boys.push(newBoy);
+        // clear input field
+        document.getElementById('newboy').value = '';
+        //update List
+        showArrays();
+    }
+
 });
 
 // Add a girl to the list
 document.getElementById('addgirl').addEventListener('click', function () {
     var newGirl = document.getElementById('newgirl').value;
-    girls.push(newGirl);
-    // clear input field
-    document.getElementById('newgirl').value = '';
-    //update List
-    showArrays();
+    if (newGirl.length > 0) {
+        girls.push(newGirl);
+        // clear input field
+        document.getElementById('newgirl').value = '';
+        //update List
+        showArrays();
+    }
 });
 
 // Remove a boy from the top of the List
@@ -90,7 +95,7 @@ document.getElementById('reverse').addEventListener('click', function () {
 // function sortALL
 document.getElementById('sort').addEventListener('click', function () {
     var concatList = boys.concat(girls);
-
+    descending(concatList);
     if (!toggleAllSort) {
         concatList = concatList.reverse();
     }

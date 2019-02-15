@@ -8,6 +8,17 @@ and open the template in the editor.
     Author     : oerte
 */
 
+li
+{
+    text-align: left;
+    color: white;
+}
+
+ul{
+    display:table;
+    margin: 0 
+        auto;
+}
 h1 
 {
     text-align: center;
