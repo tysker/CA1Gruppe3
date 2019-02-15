@@ -6,6 +6,6 @@
 var operator;
 
 function operator(event){
-    event.
-}
+   
+};
 
