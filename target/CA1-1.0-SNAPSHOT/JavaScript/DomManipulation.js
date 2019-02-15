@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 
-var boys = ["Peter", "Lars", "Ole"];
-var girls = ["Janne", "Hanne", "Sanne"];
+var boys = ["Peter", "Lars", "ole"];
+var girls = ["Janne", "hanne", "Sanne"];
 
 
 
@@ -67,6 +67,36 @@ document.getElementById('removegirl').addEventListener('click', function () {
     }
     showArrays();
 });
+
+// Reverse all names in the "ALL" coumn
+// mangler return revers!!!!!!!!!!
+document.getElementById('reverse').addEventListener('click', function () {
+    var newBoysGirlsList = boys.concat(girls).reverse();
+    document.getElementById('all').innerHTML = newBoysGirlsList.join('<br>');
+});
+
+
+
+ document.getElementById('sort').addEventListener('click', function () {
+ var newBoysGirlsList = boys.concat(girls);
+ 
+ newBoysGirlsList.sort(function (a, b) {
+ var nameA = a.toUpperCase(); // ignore upper and lowercase
+ var nameB = b.toUpperCase(); // ignore upper and lowercase
+ if (nameA < nameB) {
+ return -1;
+ }
+ if (nameA > nameB) {
+ return 1;
+ }
+ 
+ // names must be equal
+ return 0;
+ });
+ 
+ document.getElementById('all').innerHTML = newBoysGirlsList.join('<br>');
+ 
+ });
 
 
 showArrays();
