@@ -152,7 +152,7 @@ var controller = (function (listCtrl, UICtrl) {
 
     // Reverse all names in the "ALL" coumn
     document.getElementById(DOM.revert).addEventListener('click', function () {
-        var concatList = DOMList.boys.concat(DOMList.girls).reverse();
+        var concatList = DOMList.boysNew.concat(DOMList.girlsNew).reverse();
         document.getElementById(DOM.allList).innerHTML = listCtrl.generateList(concatList);
     });
 
